@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第一篇博客 | Hexo</title>
+  <title>粒子喷发效果 | Hexo</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,22 +15,24 @@
     <meta name="keywords" content="tv," />
   
 
-  <meta name="description" content="陆续分享电视开发遇到的问题
-
-hexo  g –d">
+  <meta name="description" content="高度自定义的粒子喷发效果
+Confetti是一个可以在任何时候任何地方随机发射纸屑的粒子系统库。可以轻松自定义，非常强大。比如，你可以指定随机发射的源（圆点或者线），物理约束（速度，加速度以及旋转等），以及对纸片（Confetto）（是的,就是这个单词，它是confetti的单数形式 ）的任何实现。然后这个library将在屏幕上显示你指定的纸屑发射效果。
+###使用方法：1234567new C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇博客">
+<meta property="og:title" content="粒子喷发效果">
 <meta property="og:url" content="http://yoursite.com/2016/09/07/TV开发/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="陆续分享电视开发遇到的问题
-
-hexo  g –d">
-<meta property="og:updated_time" content="2016-09-07T07:49:13.000Z">
+<meta property="og:description" content="高度自定义的粒子喷发效果
+Confetti是一个可以在任何时候任何地方随机发射纸屑的粒子系统库。可以轻松自定义，非常强大。比如，你可以指定随机发射的源（圆点或者线），物理约束（速度，加速度以及旋转等），以及对纸片（Confetto）（是的,就是这个单词，它是confetti的单数形式 ）的任何实现。然后这个library将在屏幕上显示你指定的纸屑发射效果。
+###使用方法：1234567new C">
+<meta property="og:image" content="https://github.com/jinatonic/confetti/raw/master/assets/falling_confetti_top.gif">
+<meta property="og:updated_time" content="2016-09-08T03:15:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="陆续分享电视开发遇到的问题
-
-hexo  g –d">
+<meta name="twitter:title" content="粒子喷发效果">
+<meta name="twitter:description" content="高度自定义的粒子喷发效果
+Confetti是一个可以在任何时候任何地方随机发射纸屑的粒子系统库。可以轻松自定义，非常强大。比如，你可以指定随机发射的源（圆点或者线），物理约束（速度，加速度以及旋转等），以及对纸片（Confetto）（是的,就是这个单词，它是confetti的单数形式 ）的任何实现。然后这个library将在屏幕上显示你指定的纸屑发射效果。
+###使用方法：1234567new C">
+<meta name="twitter:image" content="https://github.com/jinatonic/confetti/raw/master/assets/falling_confetti_top.gif">
 
   
 
@@ -155,12 +157,17 @@ hexo  g –d">
 </div>
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高度自定义的粒子喷发效果"><span class="toc-text">高度自定义的粒子喷发效果</span></a></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
    <article id="post-TV开发" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">第一篇博客</h1>
+    <h1 class="post-title">粒子喷发效果</h1>
 
     <div class="article-meta">
       <span>
@@ -190,10 +197,11 @@ hexo  g –d">
 
   <div class="article-content">
     
-      <blockquote>
-<p>陆续分享电视开发遇到的问题</p>
+      <h1 id="高度自定义的粒子喷发效果"><a href="#高度自定义的粒子喷发效果" class="headerlink" title="高度自定义的粒子喷发效果"></a>高度自定义的粒子喷发效果</h1><blockquote>
+<p>Confetti是一个可以在任何时候任何地方随机发射纸屑的粒子系统库。可以轻松自定义，非常强大。比如，你可以指定随机发射的源（圆点或者线），物理约束（速度，加速度以及旋转等），以及对纸片（Confetto）（是的,就是这个单词，它是confetti的单数形式 ）的任何实现。然后这个library将在屏幕上显示你指定的纸屑发射效果。</p>
+<p>###使用方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> ConfettiManager(context, generator, confettiSource, container)</div><div class="line">        .setTTL(<span class="number">1000</span>) </div><div class="line">        .setBound(explosionBound)</div><div class="line">        .setVelocityX(<span class="number">0</span>, defaultVelocityFast)</div><div class="line">        .setVelocityY(<span class="number">0</span>, defaultVelocityFast) </div><div class="line">        .enableFadeOut(Utils.getDefaultAlphaInterpolator()) </div><div class="line">        .setRotationalVelocity(<span class="number">180</span>, <span class="number">180</span>);</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p>hexo  g –d</p>
+<p>效果如下所示：<br><img src="https://github.com/jinatonic/confetti/raw/master/assets/falling_confetti_top.gif" alt=""><br>更多资料可访问<br><a href="https://github.com/jinatonic/confetti" target="_blank" rel="external"></a></p>
 
     
   </div>
