@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="不会说相声的程序员-shenyiya">
 <meta property="og:description" content="因为做的是TV项目，遇到一种情况，就是重写了Acitivity中的 dispatchKeyEvent函数，但是发现这个函数不一定会被调用。1234@Overridepublic boolean dispatchKeyEvent(KeyEvent event) &amp;#123;    return super.dispatchKeyEvent(event);&amp;#125;
 导致这个函数没有被调用的原因是，">
-<meta property="og:updated_time" content="2016-09-18T08:33:06.000Z">
+<meta property="og:updated_time" content="2016-09-18T08:35:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android dispatchKeyEvent 不调用">
 <meta name="twitter:description" content="因为做的是TV项目，遇到一种情况，就是重写了Acitivity中的 dispatchKeyEvent函数，但是发现这个函数不一定会被调用。1234@Overridepublic boolean dispatchKeyEvent(KeyEvent event) &amp;#123;    return super.dispatchKeyEvent(event);&amp;#125;
@@ -188,14 +188,7 @@
   <div class="article-content">
     
       <p>因为做的是TV项目，遇到一种情况，就是重写了Acitivity中的 dispatchKeyEvent函数，但是发现这个函数不一定会被调用。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchKeyEvent</span><span class="params">(KeyEvent event)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.dispatchKeyEvent(event);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>导致这个函数没有被调用的原因是，页面弹出了一个对话框，此时Dialog获得焦点，Activity处于OnPause状态。<br>如果我们想对Dialog中的组件进行焦点处理，我们可以按照下面的方法来处理：</p>
-<pre><code class="java">dialog.setOnKeyListener(<span class="keyword">new</span> DialogInterface.OnKeyListener() {
-      <span class="meta">@Override</span>
-      <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>{
-        <span class="comment">//做自己的业务</span>
-       }
-   });
-</code></pre>
+<p>导致这个函数没有被调用的原因是，页面弹出了一个对话框，此时Dialog获得焦点，Activity处于OnPause状态。<br>如果我们想对Dialog中的组件进行焦点处理，我们可以按照下面的方法来处理：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">dialog.setOnKeyListener(<span class="keyword">new</span> DialogInterface.OnKeyListener() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKey</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</div><div class="line">        <span class="comment">//做自己的业务</span></div><div class="line">       &#125;</div><div class="line">   &#125;);</div></pre></td></tr></table></figure></p>
 
     
   </div>
